@@ -1,5 +1,5 @@
 {
-  "name": "qqMusicApi",
+  "name": "qqmusicapi",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,6 @@
     "cheerio": "^1.0.0-rc.3",
     "colors": "^1.4.0",
     "debug": "^4.1.1",
-    "ejs": "~2.3.3",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-convert": "^1.2.0",
