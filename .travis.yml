@@ -9,6 +9,7 @@ install:
 before_install:
 - openssl aes-256-cbc -K $encrypted_d7c4e7f3bfda_key -iv $encrypted_d7c4e7f3bfda_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 addons:
   ssh_known_hosts:
     - 47.100.18.197
