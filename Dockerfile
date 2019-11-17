@@ -6,5 +6,5 @@ COPY . /app
 RUN npm config set registry "https://registry.npm.taobao.org/" \
     && npm install
 
-EXPOSE 3001
+EXPOSE 3000
 CMD ["node", "./bin/www"]
