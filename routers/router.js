@@ -33,7 +33,7 @@ router.get("/playList/allCategories", async (ctx, next) => {
  * @param {offset,sin} 偏移量
  * @param {sortId} 排序id：2:最新 5:推荐
  */
-router.get("/playList/:categoryId", async (ctx, next) => {
+router.get("/playList/:categoryId?", async (ctx, next) => {
     let categoryId = ctx.params.categoryId || 10000000;
     let sortId = ctx.query.sortId || 5;
     let sin = ctx.query.offset || 0;
@@ -62,7 +62,7 @@ router.get("/playList/:categoryId", async (ctx, next) => {
     });
 });
 //获取歌单详情
-router.get("/playListDetails/:id", async (ctx, next) => {
+router.get("/playListDetails/:id?", async (ctx, next) => {
     let params = Object.assign({
         format: "json",
         outCharset: "utf-8",
@@ -530,7 +530,7 @@ router.get("/singerFunsUp/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.singerMvs(props).then(res => {
+    await apis.singerFunsUp(props).then(res => {
         let response = res.data;
         ctx.status = 200;
         ctx.body = {
@@ -568,7 +568,7 @@ router.get("/singerDetails/:id", async (ctx, next) => {
     }
 });
 //获取歌曲详情
-router.get("/songDetais/:id", async (ctx, next) => {
+router.get("/songDetails/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let song_id = parseInt(ctx.query.songId);
     //{"comm":{"ct":24,"cv":0},"songinfo":{"method":"get_song_detail_yqq","param":{"song_type":0,"song_mid":"000V8En93R3Dvd","song_id":244905368},"module":"music.pf_song_detail_svr"}}
@@ -608,7 +608,7 @@ router.get("/songDetais/:id", async (ctx, next) => {
     });
 });
 //歌曲的相关热门歌单
-router.get("/songRelatePlayList/:id", async (ctx, next) => {
+router.get("/songRelatePlayList/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":0},"song_gedan":{"module":"music.mb_gedan_recommend_svr","method":"get_related_gedan","param":{"song_id":9103820,"song_type":1,"sin":0,"last_id":0}}}
     let song_id = parseInt(ctx.params.id);
     let data = {
@@ -645,7 +645,7 @@ router.get("/songRelatePlayList/:id", async (ctx, next) => {
     });
 });
 //歌曲相关mv
-router.get("/songRelateMv/:id", async (ctx, next) => {
+router.get("/songRelateMv/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":0},"mv":{"module":"MvService.MvInfoProServer","method":"GetMvBySongid","param":{"mids":["003KExF60zMMGK"]}}}
     let id = ctx.params.id;
     let data = {
@@ -681,7 +681,7 @@ router.get("/songRelateMv/:id", async (ctx, next) => {
     });
 });
 //歌曲歌词
-router.get("/songLyric/:id", async (ctx, next) => {
+router.get("/songLyric/:id?", async (ctx, next) => {
     let id = parseInt(ctx.params.id);
     let params = Object.assign({
         nobase64: 1,
@@ -705,7 +705,7 @@ router.get("/songLyric/:id", async (ctx, next) => {
 //http://ws.stream.qqmusic.qq.com/C400001eUOj20fEQlk.m4a
 //https://u.y.qq.com/cgi-bin/musicu.fcg
 //获取音乐的链接
-router.get("/songUrl/:id", async (ctx, next) => {
+router.get("/songUrl/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let obj = await getCommon.getMusicVkey(id);
     let purl = obj[0].purl;
@@ -957,7 +957,7 @@ router.get("/getMvByTag/:tag", async (ctx, next) => {
 router.get("/getMvList", async (ctx, next) => {
     // {"comm":{"ct":24},"mv_list":{"module":"MvService.MvInfoProServer","method":"GetAllocMvInfo","param":{"start":0,"size":20,"version_id":7,"area_id":17,"order":1}}}
     let version_id = parseInt(ctx.query.versionId||7);
-    let area_id = parseInt(ctx.query.areaId||17);
+    let area_id = parseInt(ctx.query.areaId||15);
     let start = parseInt(ctx.query.offset||0);
     let size = parseInt(ctx.query.limit||20);
     let data = {
