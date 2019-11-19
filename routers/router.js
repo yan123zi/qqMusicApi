@@ -90,13 +90,11 @@ router.get("/playListDetails/:id?", async (ctx, next) => {
 });
 //获取歌单评论
 //pagesize,pagenum就不用多说了每页显示数量和页码
-//reqtype,biztype:{2,3}歌单的评论{2,4}排行榜的评论
-router.get("/playListComments/:id", async (ctx, next) => {
+//reqtype,biztype:{2,3}歌单的评论{2,4}排行榜的评论{2,2}专辑的评论，{2,5}mv的评论,{2,1}歌曲的评论
+router.get("/Comments/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let pagesize = ctx.query.pagesize || 25;
     let pagenum = ctx.query.pagenum || 0;
-    let cid = ctx.query.cid || 205360772;
-    let cmd = ctx.query.cmd || 8;
     let reqtype = ctx.query.reqtype || 2;
     let biztype = ctx.query.biztype || 3;
     let rootcommentid = pagenum ? ctx.query.rootcommentid : '';
@@ -105,11 +103,11 @@ router.get("/playListComments/:id", async (ctx, next) => {
         format: 'json',
         outCharset: 'utf-8',
         g_tk: 5381,
-        cid,
+        cid:205360772,
         reqtype,
         biztype,
         topid: id,
-        cmd,
+        cmd:8,
         needmusiccrit: 0,
         pagenum,
         pagesize,
@@ -124,7 +122,7 @@ router.get("/playListComments/:id", async (ctx, next) => {
         options: {}
     };
     if (id && checkrootcommentid) {
-        await apis.playListComments(props).then((res) => {
+        await apis.Comments(props).then((res) => {
             let response = res.data;
             ctx.status = 200;
             ctx.body = {
@@ -141,7 +139,7 @@ router.get("/playListComments/:id", async (ctx, next) => {
     }
 });
 //榜单
-router.get("/topList/:id", async (ctx, next) => {
+router.get("/topList/:id?", async (ctx, next) => {
     let id = parseInt(ctx.params.id);
     let offset = parseInt(ctx.query.offset || 0);
     let num = parseInt(ctx.query.limit || 20);
@@ -177,21 +175,27 @@ router.get("/topList/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.topList(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.topList(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param id of toplist"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取专辑列表
 //id: 1(内地) 2(港台) 3(欧美) 4(韩国) 5(日本) 6(其它)
-router.get("/albumList/:id", async (ctx, next) => {
+router.get("/albumList/:id?", async (ctx, next) => {
     //{"new_album":{"module":"newalbum.NewAlbumServer","method":"get_new_album_info","param":{"area":4,"start":0,"num":20}},"comm":{"ct":24,"cv":0}}
-    let id = parseInt(ctx.params.id);
+    let id = parseInt(ctx.params.id||1);
     let start = parseInt(ctx.query.offset || 0);
     let num = parseInt(ctx.query.limit || 20);
     let data = {
@@ -218,18 +222,24 @@ router.get("/albumList/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.albumList(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.albumList(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of albumList type -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取专辑歌曲列表
-router.get("/albumSongList/:id", async (ctx, next) => {
+router.get("/albumSongList/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":10000},"albumSonglist":{"method":"GetAlbumSongList","param":{"albumMid":"004SsnQv1Wi7ZU","albumID":0,"begin":0,"num":10,"order":2},"module":"music.musichallAlbum.AlbumSongList"}}
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
@@ -260,18 +270,24 @@ router.get("/albumSongList/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.albumList(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.albumList(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of album -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取专辑详情
-router.get("/albumDetails/:id", async (ctx, next) => {
+router.get("/albumDetails/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":10000},"albumDetail":{"module":"music.musichallAlbum.AlbumInfoServer","method":"GetAlbumDetail","param":{"albumMid":"0036eU2A4VBjo2"}}}
     let id = ctx.params.id;
     let data = {
@@ -296,15 +312,21 @@ router.get("/albumDetails/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.albumDetails(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.albumDetails(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of album -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取歌手列表
 /**
@@ -361,7 +383,7 @@ router.get("/singerList", async (ctx, next) => {
     });
 });
 //获取歌手歌曲列表
-router.get("/singerSongList/:id", async (ctx, next) => {
+router.get("/singerSongList/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":0},"singerSongList":{"method":"GetSingerSongList","param":{"order":1,"singerMid":"0025NhlN2yWrP4","begin":0,"num":10},"module":"musichall.song_list_server"}}
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
@@ -391,18 +413,24 @@ router.get("/singerSongList/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.singerList(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.singerList(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //歌手的所有专辑
-router.get("/singerAlbums/:id", async (ctx, next) => {
+router.get("/singerAlbums/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":0},"getAlbumList":{"method":"GetAlbumList","param":{"singerMid":"0025NhlN2yWrP4","order":0,"begin":0,"num":5,"songNumTag":0,"singerID":0},"module":"music.musichallAlbum.AlbumListServer"}}
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
@@ -434,18 +462,24 @@ router.get("/singerAlbums/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.singerAlbums(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.singerAlbums(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取相似歌手
-router.get("/similarSingers/:id", async (ctx, next) => {
+router.get("/similarSingers/:id?", async (ctx, next) => {
     //{"comm":{"ct":24,"cv":10000},"similarSingerList":{"method":"GetSimilarSingerList","param":{"singerId":265,"singerMid":"001JDzPT3JdvqK","num":5},"module":"music.SimilarSingerSvr"}}
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
@@ -475,6 +509,7 @@ router.get("/similarSingers/:id", async (ctx, next) => {
         params,
         options: {}
     };
+    if (id) {
     await apis.similarSingers(props).then(res => {
         let response = res.data;
         ctx.status = 200;
@@ -484,9 +519,14 @@ router.get("/similarSingers/:id", async (ctx, next) => {
     }).catch(error => {
         console.log(`error`.error, error);
     });
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
+        }
+    }
 });
 //获取歌手的mv
-router.get("/singerMvs/:id", async (ctx, next) => {
+router.get("/singerMvs/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
     let num = parseInt(ctx.query.limit || 5);
@@ -502,18 +542,24 @@ router.get("/singerMvs/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.singerMvs(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.singerMvs(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取歌手的粉丝上传
-router.get("/singerFunsUp/:id", async (ctx, next) => {
+router.get("/singerFunsUp/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let begin = parseInt(ctx.query.offset || 0);
     let num = parseInt(ctx.query.limit || 5);
@@ -530,18 +576,24 @@ router.get("/singerFunsUp/:id", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.singerFunsUp(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response,
+    if (id) {
+        await apis.singerFunsUp(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取歌手详细信息
-router.get("/singerDetails/:id", async (ctx, next) => {
+router.get("/singerDetails/:id?", async (ctx, next) => {
     let id = ctx.params.id;
     let $ = await getCommon.getHtmlDocument("https://y.qq.com/n/yqq/singer/" + id + ".html");
     let attention = await getCommon.getAttention(id);
@@ -563,8 +615,14 @@ router.get("/singerDetails/:id", async (ctx, next) => {
         mvCount,
         attention
     };
-    ctx.body = {
-        data
+    if (id) {
+        ctx.body = {
+            data
+        }
+    }else {
+        ctx.body={
+            message:"please input param of singer -> 'id'"
+        }
     }
 });
 //获取歌曲详情
@@ -834,7 +892,7 @@ router.get("/hotKeySearch", async (ctx, next) => {
     });
 });
 //获取异步搜索显示
-router.get("/smallSow/:key", async (ctx, next) => {
+router.get("/smallShow/:key?", async (ctx, next) => {
     let key = ctx.params.key;
     let params = Object.assign({
         is_xml: 0,
@@ -845,15 +903,21 @@ router.get("/smallSow/:key", async (ctx, next) => {
         params,
         options: {}
     };
-    await apis.smallBoxShow(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response
+    if (key) {
+        await apis.smallBoxShow(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of search syncShow key -> 'key'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 // w：搜索关键字
 // p：当前页
@@ -864,7 +928,7 @@ router.get("/smallSow/:key", async (ctx, next) => {
 // 	12:mv
 // 	8:专辑
 // 	0:单曲
-router.get("/searchKey/:key", async (ctx, next) => {
+router.get("/searchKey/:key?", async (ctx, next) => {
     let w = ctx.params.key;
     let n = ctx.query.limit || 10;
     let p = ctx.query.page || 1;
@@ -914,15 +978,21 @@ router.get("/searchKey/:key", async (ctx, next) => {
         options: {},
         type
     };
-    await apis.searchKey(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response
+    if (w) {
+        await apis.searchKey(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param of search -> 'key'"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取mv通过tag
 //tag:
@@ -932,8 +1002,8 @@ router.get("/searchKey/:key", async (ctx, next) => {
 // gangtai:港台
 // oumei:欧美
 // janpan:日本
-router.get("/getMvByTag/:tag", async (ctx, next) => {
-    let lan = ctx.params.tag;
+router.get("/getMvByTag/:tag?", async (ctx, next) => {
+    let lan = ctx.params.tag||"all";
     let params = Object.assign({
         cmd: "shoubo",
         lan,
@@ -943,15 +1013,21 @@ router.get("/getMvByTag/:tag", async (ctx, next) => {
         params,
         options: {},
     };
-    await apis.getMvByTag(props).then(res => {
-        let response = res.data;
-        ctx.status = 200;
-        ctx.body = {
-            response
+    if (lan) {
+        await apis.getMvByTag(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param tag!"
         }
-    }).catch(error => {
-        console.log(`error`.error, error);
-    });
+    }
 });
 //获取mv列表
 router.get("/getMvList", async (ctx, next) => {
@@ -986,6 +1062,154 @@ router.get("/getMvList", async (ctx, next) => {
         options: {}
     };
     await apis.mvList(props).then(res => {
+        let response = res.data;
+        ctx.status = 200;
+        ctx.body = {
+            response,
+        }
+    }).catch(error => {
+        console.log(`error`.error, error);
+    });
+});
+//获得mv的详情
+router.get("/mvDetails/:id?", async (ctx, next) => {
+    //{"comm":{"ct":24,"cv":4747474},
+    // "mvinfo":{"module":"video.VideoDataServer","method":"get_video_info_batch",
+    // "param":{"vidlist":["h00326uiair"],
+    // "required":["vid","type","sid","cover_pic","duration","singers","video_switch","msg","name","desc","playcnt","pubdate","isfav","gmid"]}},
+    // "other":{"module":"video.VideoLogicServer","method":"rec_video_byvid",
+    // "param":{"vid":"h00326uiair","required":["vid","type","sid","cover_pic","duration","singers","video_switch","msg","name","desc","playcnt","pubdate","isfav","gmid","uploader_headurl","uploader_nick","uploader_encuin","uploader_uin","uploader_hasfollow","uploader_follower_num"],"support":1}}}
+    let id = ctx.params.id;
+    let data = {
+        mvinfo: {
+            module: "video.VideoDataServer",
+            method: "get_video_info_batch",
+            param: {
+                vidlist: [id],
+                required: ["vid","type","sid","cover_pic","duration","singers","video_switch","msg","name","desc","playcnt","pubdate","isfav","gmid"]
+            }
+        },
+        other:{
+            module:"video.VideoLogicServer",
+            method:"rec_video_byvid",
+            param:{
+                vid:id,
+                required:["vid","type","sid","cover_pic","duration","singers","video_switch","msg","name","desc","playcnt","pubdate","isfav","gmid","uploader_headurl","uploader_nick","uploader_encuin","uploader_uin","uploader_hasfollow","uploader_follower_num"],
+                support:1
+            }
+        },
+        comm: {
+            ct: 24,
+            cv: 4747474
+        }
+    };
+    data = JSON.stringify(data);
+    let params = Object.assign({
+        data
+    });
+    let props = {
+        method: "get",
+        params,
+        options: {}
+    };
+    if (id) {
+        await apis.mvDetails(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param id!"
+        }
+    }
+});
+//获取mv的播放链接
+//{"getMvUrl":{"module":"gosrf.Stream.MvUrlProxy","method":"GetMvUrls","param":{"vids":["v0032zk67ui"],"request_typet":10001}}}
+router.get("/mvUrl/:id?", async (ctx, next) => {
+    let id = ctx.params.id;
+    let data = {
+        getMvUrl: {
+            module: "gosrf.Stream.MvUrlProxy",
+            method: "GetMvUrls",
+            param: {
+                vids: [id],
+                request_typet: 10001
+            }
+        }
+    };
+    data = JSON.stringify(data);
+    let params = Object.assign({
+        data
+    });
+    let props = {
+        method: "get",
+        params,
+        options: {}
+    };
+    if (id) {
+        await apis.mvUrl(props).then(res => {
+            let response = res.data;
+            ctx.status = 200;
+            ctx.body = {
+                response,
+            }
+        }).catch(error => {
+            console.log(`error`.error, error);
+        });
+    }else {
+        ctx.body={
+            message:"please input param id!"
+        }
+    }
+});
+//获取mv排行榜
+//rank_type,area_type
+//0,0总榜
+//0,1内地榜
+//0,5日本榜
+//0,3欧美榜
+//0,2港台榜
+//0,4韩国榜
+router.get("/mvRank", async (ctx, next) => {
+   //{"comm":{"ct":24,"cv":0},
+    // "request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":0,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    //{"comm":{"ct":24,"cv":0},"request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":1,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    //{"comm":{"ct":24,"cv":0},"request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":5,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    //{"comm":{"ct":24,"cv":0},"request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":3,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    //{"comm":{"ct":24,"cv":0},"request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":2,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    //{"comm":{"ct":24,"cv":0},"request":{"method":"get_video_rank_list","param":{"rank_type":0,"area_type":4,"required":["vid","name","singers","cover_pic","pubdate"]},"module":"video.VideoRankServer"}}
+    let rank_type=parseInt(ctx.query.rankType||0);
+    let area_type=parseInt(ctx.query.areaType||0);
+    let data = {
+        request: {
+            module: "video.VideoRankServer",
+            method: "get_video_rank_list",
+            param: {
+                rank_type,
+                area_type,
+                required: ["vid","name","singers","cover_pic","pubdate"]
+            }
+        },
+        comm:{
+            ct:24,
+            cv:0
+        }
+    };
+    data = JSON.stringify(data);
+    let params = Object.assign({
+        data
+    });
+    let props = {
+        method: "get",
+        params,
+        options: {}
+    };
+    await apis.mvRank(props).then(res => {
         let response = res.data;
         ctx.status = 200;
         ctx.body = {

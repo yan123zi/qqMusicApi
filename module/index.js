@@ -3,7 +3,7 @@ const playListCategories = require("./apis/playLists/playListCategories");
 const playLists = require("./apis/playLists/playLists");
 const playListDetails = require("./apis/playLists/playListDetails");
 //comments
-const playListComments = require("./apis/comment/playListComments");
+const Comments = require("./apis/comment/Comments");
 //topList
 const topList = require("./apis/topList/topList");
 //album
@@ -29,12 +29,15 @@ const searchKey = require("./apis/search/searchKey");
 //mv
 const mvList = require("./apis/mv/mvList");
 const getMvByTag = require("./apis/mv/getMvByTag");
+const mvDetails=require("./apis/mv/mvDetails");
+const mvUrl=require("./apis/mv/mvUrl");
+const mvRank=require("./apis/mv/mvRank");
 //暴露的接口
 module.exports = {
     playListCategories,
     playLists,
     playListDetails,
-    playListComments,
+    Comments,
     topList,
     albumList,
     albumDetails,
@@ -52,5 +55,8 @@ module.exports = {
     smallBoxShow,
     searchKey,
     mvList,
-    getMvByTag
+    getMvByTag,
+    mvDetails,
+    mvUrl,
+    mvRank
 };
