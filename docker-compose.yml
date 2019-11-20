@@ -4,4 +4,4 @@ services:
     image: qqmusicapi:v1
     container_name: qqmusicapi
     ports:
-      - 3001:3000
+      - 3200:3200
