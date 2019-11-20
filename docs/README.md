@@ -1,6 +1,6 @@
 <h2 align="center" id="qqmusicapi">QQ Music API</h2>
 
-!> QQ音乐API koa2 版本, 通过Web网页版请求QQ音乐接口数据, 有问题请提 [issue](https://github.com/yan123zi/qqMusicApi/issues), 或者你有其他想法欢迎`PR`.
+!> QQ音乐API koa2 版本, 通过Web网页版请求QQ音乐接口数据, 有问题请提 [issue](https://github.com/yan123zi/qqMusicApi/issues), or你有其他想法欢迎`PR`.
 
 ## API结构图
 
@@ -272,7 +272,7 @@
 
 接口地址：`/playList/:categoryId`
 
-调用例子：`/playList/10000000 || /playList?categoryId=10000000`
+调用例子：`/playList/10000000 or /playList?categoryId=10000000`
 
 实例截图：
 
@@ -296,7 +296,7 @@
 
 接口地址：`/playListDetails/:id?`
 
-调用例子：`/playListDetails/6375131889 || /playListDetails?id=6375131889`
+调用例子：`/playListDetails/6375131889 or /playListDetails?id=6375131889`
 
 实例截图：
 
@@ -316,7 +316,7 @@
 
 接口地址：`/songUrl/:id?`
 
-调用例子：`/songUrl/001Xn6C50lvtLc || /songUrl?id=001Xn6C50lvtLc`
+调用例子：`/songUrl/001Xn6C50lvtLc or /songUrl?id=001Xn6C50lvtLc`
 
 实例截图：
 
@@ -336,7 +336,7 @@
 
 接口地址：`/songLyric/:id?`
 
-调用例子：`/songLyric/231745979 || /songLyric?id=231745979`
+调用例子：`/songLyric/231745979 or /songLyric?id=231745979`
 
 实例截图：
 
@@ -356,7 +356,7 @@
 
 接口地址：`/songDetails/:id?`
 
-调用例子：`/songDetails/0035KWhu1mizlY || /songDetails?0035KWhu1mizlY`
+调用例子：`/songDetails/0035KWhu1mizlY or /songDetails?0035KWhu1mizlY`
 
 实例截图：
 
@@ -376,7 +376,7 @@
 
 接口地址：`/songRelateMv/:id?`
 
-调用例子：`/songRelateMv/0020VnHM0U9uNh || /songRelateMv?id=0020VnHM0U9uNh`
+调用例子：`/songRelateMv/0020VnHM0U9uNh or /songRelateMv?id=0020VnHM0U9uNh`
 
 实例截图：
 
@@ -396,7 +396,7 @@
 
 接口地址：`/songRelatePlayList/:id?`
 
-调用例子：`/songRelatePlayList/233060208 || /songRelatePlayList?id=233060208`
+调用例子：`/songRelatePlayList/233060208 or /songRelatePlayList?id=233060208`
 
 实例截图：
 
@@ -547,7 +547,7 @@
 
 接口地址：`/getMvByTag/:tag?`
 
-调用例子：`/getMvByTag/gangtai || /getMvByTag?tag=gangtai`
+调用例子：`/getMvByTag/gangtai or /getMvByTag?tag=gangtai`
 
 实例截图：
 
@@ -567,7 +567,7 @@
 
 接口地址：`/mvDetails/:id?`
 
-调用例子：`/mvDetails/v0032zk67ui || /mvDetails?id=v0032zk67ui`
+调用例子：`/mvDetails/v0032zk67ui or /mvDetails?id=v0032zk67ui`
 
 实例截图：
 
@@ -587,7 +587,7 @@
 
 接口地址：`/mvUrl/:id?`
 
-调用例子：`/mvUrl/v0032zk67ui || /mvUrl?id=v0032zk67ui`
+调用例子：`/mvUrl/v0032zk67ui or /mvUrl?id=v0032zk67ui`
 
 实例截图：
 
@@ -731,7 +731,7 @@
 
 接口地址：`/topList/:id?`
 
-调用例子：`/topList/26 || /topList?id=26`
+调用例子：`/topList/26 or /topList?id=26`
 
 实例截图：
 
@@ -792,7 +792,7 @@
 
 接口地址：`/albumList/:id?`
 
-调用例子：`/albumList/1 || /albumList?id=1`
+调用例子：`/albumList/1 or /albumList?id=1`
 
 **获取新专辑列表**
 
@@ -862,7 +862,7 @@
 
 接口地址：`/smallSow/:key?`
 
-调用例子：`/smallSow/芒种 || /smallSow?key=芒种`
+调用例子：`/smallSow/芒种 or /smallSow?key=芒种`
 
 **获取异步的搜索提示**
 
@@ -911,7 +911,7 @@
 
 接口地址：`/searchKey/:id?`
 
-调用例子：`/searchKey/芒种 || /searchKey?id=芒种`
+调用例子：`/searchKey/芒种 or /searchKey?id=芒种`
 
 **搜索关键字**
 
@@ -1082,7 +1082,7 @@
 
 接口地址：`/singerDetails/:id?`
 
-调用例子：`/singerDetails/002azErJ0UcDN6 || /singerDetails?id=002azErJ0UcDN6`
+调用例子：`/singerDetails/002azErJ0UcDN6 or /singerDetails?id=002azErJ0UcDN6`
 
 **获取歌手的详细信息**
 
@@ -1106,7 +1106,7 @@
 
 接口地址：`/singerSongList/:id?`
 
-调用例子：`/singerSongList/002azErJ0UcDN6 || /singerSongList?id=002azErJ0UcDN6`
+调用例子：`/singerSongList/002azErJ0UcDN6 or /singerSongList?id=002azErJ0UcDN6`
 
 **获取歌手的歌曲列表**
 
@@ -1134,7 +1134,7 @@
 
 接口地址：`/singerAlbums/:id?`
 
-调用例子：`/singerAlbums/002azErJ0UcDN6 || /singerAlbums?id=002azErJ0UcDN6`
+调用例子：`/singerAlbums/002azErJ0UcDN6 or /singerAlbums?id=002azErJ0UcDN6`
 
 **获取歌手的所有专辑**
 
@@ -1162,7 +1162,7 @@
 
 接口地址：`/singerMvs/:id?`
 
-调用例子：`/singerMvs/002azErJ0UcDN6 || /singerMvs?id=002azErJ0UcDN6`
+调用例子：`/singerMvs/002azErJ0UcDN6 or /singerMvs?id=002azErJ0UcDN6`
 
 **获取歌手的所有mv**
 
@@ -1190,7 +1190,7 @@
 
 接口地址：`/singerFunsUp/:id?`
 
-调用例子：`/singerFunsUp/002azErJ0UcDN6 || /singerFunsUp?id=002azErJ0UcDN6`
+调用例子：`/singerFunsUp/002azErJ0UcDN6 or /singerFunsUp?id=002azErJ0UcDN6`
 
 **获取歌手的粉丝上传内容**
 
@@ -1272,7 +1272,7 @@
 
 接口地址：`/Comments/:id?`
 
-调用例子：`/Comments/6999230203 || /Comments?id=6999230203`
+调用例子：`/Comments/6999230203 or /Comments?id=6999230203`
 
 **获取歌单，专辑，歌曲的评论**
 
