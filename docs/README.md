@@ -270,7 +270,7 @@
 
 `sortId`：排序id：2:最新 5:推荐，默认是5
 
-接口地址：`/playList/:categoryId`
+接口地址：`/playList/:categoryId?`
 
 调用例子：`/playList/10000000 or /playList?categoryId=10000000`
 
