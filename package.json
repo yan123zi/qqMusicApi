@@ -1,9 +1,10 @@
 {
   "name": "qqmusicapi",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www"
+    "start": "node bin/www",
+    "docs": "docsify serve docs"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -18,7 +19,6 @@
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
-    "koa-views": "^6.2.0",
     "moment": "^2.24.0"
   },
   "devDependencies": {
