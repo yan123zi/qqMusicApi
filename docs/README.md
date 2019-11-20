@@ -4,7 +4,7 @@
 
 ## API结构图
 
-![qq-music](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/qqmusicapi.PNG)
+![qq-music](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/qqmusicapi.PNG)
 
 ## API接口
 
@@ -250,7 +250,7 @@
 
 示例截图:
 
-![获取歌单分类](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListCategories.png)
+![获取歌单分类](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/playListCategories.png)
 
 ### 获取歌单列表
 
@@ -278,11 +278,11 @@
 
 **获取歌单列表**
 
-![通过分类获取歌单列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListByCategory.png)
+![通过分类获取歌单列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/playListByCategory.png)
 
 **获取歌单列表-带参数**
 
-![通过分类获取歌单列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListByCategoryWithParams.png)
+![通过分类获取歌单列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/playListByCategoryWithParams.png)
 
 ### 获取歌单详情
 
@@ -302,7 +302,7 @@
 
 **获取歌单详情**
 
-![获取歌单详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
+![获取歌单详情](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/playListDetails.png)
 
 ### 获取歌曲的链接
 
@@ -322,7 +322,7 @@
 
 **获取歌曲的链接**
 
-![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songUrl.png)
+![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/songUrl.png)
 
 ### 获取歌曲的歌词
 
@@ -342,7 +342,7 @@
 
 **获取歌曲的歌词**
 
-![获取歌曲的歌词](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songLyric.png)
+![获取歌曲的歌词](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/songLyric.png)
 
 ### 获取歌曲的详情
 
@@ -362,7 +362,7 @@
 
 **获取歌曲的详情**
 
-![获取歌曲的详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
+![获取歌曲的详情](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/playListDetails.png)
 
 ### 获取歌曲的相关mv
 
@@ -382,7 +382,7 @@
 
 **获取歌曲的相关mv**
 
-![获取歌曲的相关mv](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songMv.png)
+![获取歌曲的相关mv](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/songMv.png)
 
 ### 获取歌曲的相关热门歌单
 
@@ -402,7 +402,7 @@
 
 **获取歌曲的相关热门歌单**
 
-![获取歌曲的相关热门歌单](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songRelatePlayList.png)
+![获取歌曲的相关热门歌单](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/songRelatePlayList.png)
 
 ### 通过不同筛选规则获取mv列表
 
@@ -498,11 +498,11 @@
 
 **通过不同筛选规则获取mv列表**
 
-![通过不同筛选规则获取mv列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvList.png)
+![通过不同筛选规则获取mv列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/getMvList.png)
 
 **通过不同筛选规则获取mv列表-带参数**
 
-![通过不同筛选规则获取mv列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvListByParams.png)
+![通过不同筛选规则获取mv列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/getMvListByParams.png)
 
 ### 通过mv的标签种类获取mv列表
 
@@ -553,7 +553,7 @@
 
 **通过mv的标签种类获取mv列表**
 
-![通过mv的标签种类获取mv列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvListByTag.png)
+![通过mv的标签种类获取mv列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/getMvListByTag.png)
 
 ### 获取mv详情
 
@@ -573,7 +573,7 @@
 
 **获取mv详情**
 
-![获取mv详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvDetails.png)
+![获取mv详情](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/mvDetails.png)
 
 ### 获取mv播放链接
 
@@ -593,7 +593,7 @@
 
 **获取mv详情**
 
-![获取mv播放链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvUrl.png)
+![获取mv播放链接](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/mvUrl.png)
 
 ### 获取主页上的推荐
 
@@ -607,7 +607,7 @@
 
 **获取主页上的推荐**
 
-![获取主页上的推荐](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/Recommend.png)
+![获取主页上的推荐](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/Recommend.png)
 
 ### 获取各种分类的榜单列表
 
@@ -737,11 +737,11 @@
 
 **获取各种分类的榜单列表**
 
-![获取各种分类的榜单列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/topList.png)
+![获取各种分类的榜单列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/topList.png)
 
 **获取各种分类的榜单列表-带参数**
 
-![获取各种分类的榜单列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/topListWithParam.png)
+![获取各种分类的榜单列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/topListWithParam.png)
 
 ### 获取新专辑列表
 
@@ -796,11 +796,11 @@
 
 **获取新专辑列表**
 
-![获取新专辑列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumList.png)
+![获取新专辑列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/albumList.png)
 
 **获取新专辑列表-带参数**
 
-![获取新专辑列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumListWithParam.png)
+![获取新专辑列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/albumListWithParam.png)
 
 ### 获取专辑详情
 
@@ -818,7 +818,7 @@
 
 **获取专辑详情**
 
-![获取专辑详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumDetails.png)
+![获取专辑详情](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/albumDetails.png)
 
 ### 获取专辑内歌曲列表
 
@@ -836,7 +836,7 @@
 
 **获取专辑内歌曲列表**
 
-![获取专辑内歌曲列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumSongList.png)
+![获取专辑内歌曲列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/albumSongList.png)
 
 ### 获取热门搜索的关键字
 
@@ -848,7 +848,7 @@
 
 **获取热门搜索的关键字**
 
-![获取热门搜索的关键字](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/hotKeySearch.png)
+![获取热门搜索的关键字](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/hotKeySearch.png)
 
 ### 获取异步的搜索提示
 
@@ -866,7 +866,7 @@
 
 **获取异步的搜索提示**
 
-![获取异步的搜索提示](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/smallShow.png)
+![获取异步的搜索提示](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/smallShow.png)
 
 ### 搜索关键字
 
@@ -915,11 +915,11 @@
 
 **搜索关键字**
 
-![搜索关键字](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKey.png)
+![搜索关键字](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/searchKey.png)
 
 **搜索关键字-带参数**
 
-![搜索关键字-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKeyWithParam.png)
+![搜索关键字-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/searchKeyWithParam.png)
 
 ### 获取歌手列表
 
@@ -1064,11 +1064,11 @@
 
 **获取歌手列表**
 
-![获取歌手列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKey.png)
+![获取歌手列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/searchKey.png)
 
 **获取歌手列表-带参数**
 
-![获取歌手列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerListWithParam.png)
+![获取歌手列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerListWithParam.png)
 
 ### 获取歌手的详细信息
 
@@ -1086,7 +1086,7 @@
 
 **获取歌手的详细信息**
 
-![获取歌手的详细信息](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerDetails.png)
+![获取歌手的详细信息](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerDetails.png)
 
 ### 获取歌手的歌曲列表
 
@@ -1110,11 +1110,11 @@
 
 **获取歌手的歌曲列表**
 
-![获取歌手的歌曲列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerSongList.png)
+![获取歌手的歌曲列表](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerSongList.png)
 
 **获取歌手的歌曲列表-带参数**
 
-![获取歌手的歌曲列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerSongListWithParam.png)
+![获取歌手的歌曲列表-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerSongListWithParam.png)
 
 ### 获取歌手的所有专辑
 
@@ -1138,11 +1138,11 @@
 
 **获取歌手的所有专辑**
 
-![获取歌手的所有专辑](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerAlbums.png)
+![获取歌手的所有专辑](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerAlbums.png)
 
 **获取歌手的所有专辑-带参数**
 
-![获取歌手的所有专辑-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerAlbumsWithParam.png)
+![获取歌手的所有专辑-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerAlbumsWithParam.png)
 
 ### 获取歌手的所有mv
 
@@ -1166,11 +1166,11 @@
 
 **获取歌手的所有mv**
 
-![获取歌手的所有mv](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerMvs.png)
+![获取歌手的所有mv](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerMvs.png)
 
 **获取歌手的所有mv-带参数**
 
-![获取歌手的所有mv-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerMVsWithParam.png)
+![获取歌手的所有mv-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerMVsWithParam.png)
 
 ### 获取歌手的粉丝上传内容
 
@@ -1194,11 +1194,11 @@
 
 **获取歌手的粉丝上传内容**
 
-![获取歌手的粉丝上传内容](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerFunsUp.png)
+![获取歌手的粉丝上传内容](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerFunsUp.png)
 
 **获取歌手的粉丝上传内容-带参数**
 
-![获取歌手的粉丝上传内容-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerFunsUpWithParam.png)
+![获取歌手的粉丝上传内容-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/singerFunsUpWithParam.png)
 
 ### 获取歌手的相似歌手
 
@@ -1222,11 +1222,11 @@
 
 **获取歌手的相似歌手**
 
-![获取歌手的相似歌手](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingers.png)
+![获取歌手的相似歌手](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/similarSingers.png)
 
 **获取歌手的相似歌手-带参数**
 
-![获取歌手的相似歌手-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingersWithParam.png)
+![获取歌手的相似歌手-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/similarSingersWithParam.png)
 
 ### 获取歌单，专辑，歌曲的评论
 
@@ -1276,8 +1276,8 @@
 
 **获取歌单，专辑，歌曲的评论**
 
-![获取歌单，专辑，歌曲的评论](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingers.png)
+![获取歌单，专辑，歌曲的评论](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/similarSingers.png)
 
 **获取歌单，专辑，歌曲的评论-带参数**
 
-![获取歌单，专辑，歌曲的评论-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/commontsWithParam.png)
+![获取歌单，专辑，歌曲的评论-带参数](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/commontsWithParam.png)
