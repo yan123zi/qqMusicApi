@@ -4,7 +4,7 @@
 
 ## API结构图
 
-![qq-music](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/qqmusicapi.PNG)
+![qq-music](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/qqMusicApi.png)
 
 ## API接口
 
