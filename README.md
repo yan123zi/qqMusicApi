@@ -8,7 +8,7 @@ qq音乐 Node.js API service
 
 ### API结构图
 
-![qq-music](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/qqmusicapi.PNG)
+![qq-music](https://raw.githubusercontent.com/yan123zi/qqMusicApi/master/screenshot/qqMusicApi.png)
 
 ### 环境要求
 
